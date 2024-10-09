@@ -1,2 +1,6 @@
 *.csv
 *.pkl
+/data
+/photos
+*.session
+.env
