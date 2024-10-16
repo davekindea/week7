@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+  - name: public
+    schema: public
+    tables:
+      - name: task2_data
+
+models:
+  - name: task2_transform  
+    description: "This model consolidates all transformed message data from the table, providing enriched details such as message length, media type, and channel statistics."
+    columns:
+      - name: channel_title
+        description: "The title of the channel where the message was posted."
+        data_tests:  # Change this from tests to data_tests
+          - not_null
+      - name: channel_username
+        description: "The username of the channel."
+        data_tests:  # Change this from tests to data_tests
+          - not_null
+      - name: message_id  # Ensure the column names match your SQL model
+        description: "Unique identifier for each message."
+        data_tests:  # Change this from tests to data_tests
+          - not_null
+      - name: message
+        description: "The content of the message."
+        data_tests:  # Change this from tests to data_tests
+          - not_null
+      - name: date
+        description: "The date and time the message was posted."
+        data_tests:  # Change this from tests to data_tests
+          - not_null
+      - name: media_path
+        description: "The path to any media associated with the message."
+      - name: message_length
+        description: "The length of the message content."
+        data_tests:  # Change this from tests to data_tests
+          - not_null
+      - name: message_year
+        description: "The year when the message was posted."
+      - name: message_month
+        description: "The month when the message was posted."
+      - name: message_count
+        description: "Total number of messages in the channel."
+      - name: first_message_date
+        description: "Date of the first message in the channel."
+      - name: last_message_date
+        description: "Date of the last message in the channel."
